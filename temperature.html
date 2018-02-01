@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="convertstyle.css">
+	<link rel="stylesheet" type="text/css" href="materialize.css">
+	<link rel="stylesheet" type="text/css" href="materialize.min.css">
+</head>
+<body class="grey lighten-3">
+	<div class="col nav z-depth-4">
+		<nav class="nav-extended">
+		    <div class="nav-wrapper white">
+		      <a href="#" class="brand-logo center black-text ">Calculator</a>
+		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="" class="black-text">About</a></li>
+		        <li><a href="" class="black-text">Contact</a></li>
+		      </ul>
+		      <ul class="side-nav" id="mobile-demo">
+		        <li><a href="">About</a></li>
+		        <li><a href="">Contact</a></li>
+		      </ul>
+		    </div>
+		    <div class="nav-content grey darken-4">
+		      <ul class="tabs tabs-transparent">
+		        <li class="tab"><a href="index.html">Base Conversion</a></li>
+		        <li class="tab"><a class="active" href="temperature.html">Temp Conversion</a></li>
+		        <li class="tab"><a href="mathss.html">Arithmetic Calculation</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	</div>
+	<br><br><br>
+	
+  </div>
+   <div class="row">
+        <div class="col s8 offset-s2 valign z-depth-5">
+          <div class="card  grey darken-3">
+            <div class="card-content white-text">
+              <span class="col s6 offset-s3 card-title center z-depth-3">Temperature Conversion</span>
+            <div class="row">
+			    <form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s4">
+			        	<input id="from" type="text" class="validate" placeholder="From Which unit of Temperature">
+			        </div>
+			        <div class="input-field col s4 offset-s4">
+			        	<input id="to" type="text" class="validate" placeholder="To Which unit of Temperature">
+			        </div>
+			        <br>
+			        <div class="input-field col s12">
+			        	<input id="temp" type="text" class="validate" placeholder="Enter Temperature to be Converted">
+			        </div>
+			        <div class="center">
+			        	<a onclick="tempcon()" class="waves-effect waves-light btn grey black-text z-depth-5">CONVERT</a>
+			        </div>
+			        <div class="input-field col s12">
+			        	<input id="ans" type="text" class="validate" placeholder="Converted Temperature">			     
+			        </div>
+			      </div>	    
+			    </form>
+            </div>           
+          </div>
+        </div>
+      </div>
+
+<script type="text/javascript">
+	function tempcon()
+	{
+		tfr=document.getElementById("from").value;
+		tto=document.getElementById("to").value;
+		tmp=document.getElementById("temp").value;
+		
+		tmp=parseFloat(tmp);
+		
+		if(tfr==tto) tt=tmp;
+		else if(tfr=='K' && tto=='C') tt=tmp-273.15;
+		else if(tfr=='C' && tto=='K') tt=(tmp+273.15);
+		else if(tfr=='K' && tto=='F') tt=(tmp-273.15)*9/5+32;
+		else if(tfr=='F' && tto=='K') tt=(tmp-32)*5/9+273.15;
+		else if(tfr=='C' && tto=='F') tt=tmp*9/5+32;
+		else if(tfr=='F' && tto=='C') tt=(tmp-32)*(5/9);
+		else alert("Wrong input!!");
+		
+		document.getElementById('ans').value=tt;
+		document.getElementById("from").value='';
+		document.getElementById("to").value='';
+		document.getElementById("temp").value='';
+
+	}
+
+</script>
+</body>
+
+</html>

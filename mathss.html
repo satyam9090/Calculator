@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="convertstyle.css">
+	<link rel="stylesheet" type="text/css" href="materialize.css">
+	<link rel="stylesheet" type="text/css" href="materialize.min.css">
+</head>
+<body class="grey lighten-3">
+	<div class="col nav z-depth-4">
+		<nav class="nav-extended">
+		    <div class="nav-wrapper white">
+		      <a href="#" class="brand-logo center black-text ">Calculator</a>
+		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="" class="black-text">About</a></li>
+		        <li><a href="" class="black-text">Contact</a></li>
+		      </ul>
+		      <ul class="side-nav" id="mobile-demo">
+		        <li><a href="">About</a></li>
+		        <li><a href="">Contact</a></li>
+		      </ul>
+		    </div>
+		    <div class="nav-content grey darken-4">
+		      <ul class="tabs tabs-transparent">
+		        <li class="tab"><a href="index.html">Base Conversion</a></li>
+		        <li class="tab"><a href="temperature.html">Temp Conversion</a></li>
+		        <li class="tab"><a class="active" href="mathss.html">Arithmetic Calculation</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	</div>
+	<br><br><br>
+	
+  </div>
+   <div class="row">
+        <div class="col s8 offset-s2 valign z-depth-5">
+          <div class="card  grey darken-3">
+            <div class="card-content white-text">
+              <span class="col s6 offset-s3 card-title center z-depth-3">Arithmetic Calculation</span>
+            <div class="row">
+			    <form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s6">
+			        	<input id="a" type="text" class="validate" placeholder="First Number for Carrying out Operation">
+			        </div>
+			        <div class="input-field col s6">
+			        	<input id="b" type="text" class="validate" placeholder="Second Number for Carrying out Operation">
+			        </div>
+			        <br>
+			        <div class="input-field col s12">
+			        	<input id="bin" type="text" class="validate" placeholder="Enter Any Binary Operation">
+			        </div>
+			        <div class="center">
+			        	<a onclick="calculate()" class="waves-effect waves-light btn grey black-text z-depth-5">CALCULATE</a>
+			        </div>
+			        <div class="input-field col s12">
+			        	<input id="ans" type="text" class="validate" placeholder="ANSWER">			     
+			        </div>
+			      </div>	    
+			    </form>
+            </div>           
+          </div>
+        </div>
+      </div>
+
+<script type="text/javascript">
+	function calculate()
+	{
+		aa=document.getElementById("a").value;
+		bb=document.getElementById("b").value;
+		oo=document.getElementById("bin").value;
+		aa=parseFloat(aa);
+		bb=parseFloat(bb);
+
+		if(oo=='+') x=aa+bb;
+		else if(oo=='-') x=aa-bb;
+		else if(oo=='*') x=aa*bb;
+		else if(oo=='/') x=aa/bb;
+		else alert("Error!!")
+		
+		document.getElementById('ans').value=x;
+		document.getElementById("a").value='';
+		document.getElementById("b").value='';
+		document.getElementById("bin").value='';
+
+	}
+
+</script>
+</body>
+
+</html>
